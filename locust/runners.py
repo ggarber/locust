@@ -245,7 +245,7 @@ class MasterLocustRunner(DistributedLocustRunner):
 
         self.server = rpc.Server(self.master_bind_host, self.master_bind_port)
         self.greenlet = Group()
-        self.greenlet.spawn(self.client_listener).link_exception(callback=self.noop)
+        self.greenlet.spawn(self.client_listener).link_exception(self.noop)
         
         # listener that gathers info on how many locust users the slaves has spawned
         def on_slave_report(client_id, data):

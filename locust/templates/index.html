@@ -38,7 +38,10 @@
                     <a href="/stop"><img src="/static/img/stop.png" style="border:0;"></a>
                 </div>
                 <div class="top_box box_stop box_running" id="box_reset">
-                    <a href="/stats/reset">Reset Stats</a>
+                    <a href="/stats/reset">Reset Stats</a></br>
+                    {% if is_distributed %}
+                        <a href="/cloud/create">Spawn Slave</a>
+                    {% endif %}
                 </div>
             </div>
             <div style="clear:both;"></div>
